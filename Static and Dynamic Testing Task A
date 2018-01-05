@@ -1,0 +1,82 @@
+### Testing task 1 code:
+
+# Carry out static testing on the code below.
+# Read through the code.
+# Comment any errors you can see without correcting them.
+
+
+# If we are passing in 'val' as a variable it should be in brackets
+# Poorly indented, the returns should be one tab further in
+# Badly named, func1 is too generic
+def func1 val
+  if val = 1
+  return true
+  else
+  return false
+  end
+end
+
+
+# Function should be started with a 'def', not 'dif'
+# The variables should be passed in as (a, b), not a b
+# The 'b' after else should be 'return b' and be indented one place further
+# Has an additional 'end'
+dif max a b
+  if a > b
+      return a
+  else
+  b
+  end
+end
+end
+
+
+# Only puts it's value, does not return it
+# The puts line should be indented one space further
+def looper
+  for i in 1..10
+  puts i
+  end
+end
+
+
+
+failures = 0
+
+
+# Has no closing end
+# The looper function does not return the i value
+# looper is not a variable value so we cannot check equality against it
+if looper == 10
+  puts "looper passed"
+else
+  puts "looper failed"
+  failures = failures + 1
+
+
+# No indication on the output of what this is actually testing, func1 is too generic
+if func1(3) == false
+  puts "func1(3) passed"
+else
+  puts "func1(3) failed"
+  failures = failures + 1
+end
+
+
+# A failure outputs the name of the wrong function
+# Variable name is set to 'failrues' instead of 'failures'
+if max(100,1) == 100
+  puts "max(100,1) passed"
+else
+  puts "func1(3) failed"
+  failrues = failures + 1
+end
+
+
+# 'failures' will always return true i.e. "Test Failed" as all values in ruby have a default 'truthy' value
+# In a working version we would specify what number 'failures' should be equal to and return "Test passed" if it matches that number
+if failures
+  puts "Test Failed"
+else
+  puts "Test Passed"
+end
